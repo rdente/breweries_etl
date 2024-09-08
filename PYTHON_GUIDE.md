@@ -1,4 +1,4 @@
-PYTHON GUIDE
+# PYTHON GUIDE
 
 Este documento é uma preparação do Python no Ubuntu: Utilize `sudo apt-get install python3.9` para instalar o Python.
 Após a instalação, instale as bibliotecas:
