@@ -1,11 +1,11 @@
 # Criando o container
 
-- Instale algum docker por bash, no caso foi utilizado podman
+- Instale algum docker por bash, no caso foi utilizado podman pelo comando bash
 `sudo apt install podman-docker`
 
-- Navegue para sua pasta `cd /home/user/airflow`
+- Navegue para sua pasta usando `cd /home/user/airflow`
 
-- Crie um arquivo com um bloco de notas ou o nano usando `nano Dockerfile`
+- Crie um arquivo com um bloco de notas, ou o nano usando neste caso`nano Dockerfile`
 
 - Cole o conteudo de `Containerfile` e salve com o mesmo nome em seu path `/home/user/airflow`
 
