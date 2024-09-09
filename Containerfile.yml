@@ -1,0 +1,38 @@
+# Dockerfile
+
+
+# Versão do Airflow para o docker
+FROM docker.io/apache/airflow
+
+# Definindo o path do Airflow
+WORKDIR /usr/local/airflow
+
+# Copiar o DAG para o path de DAGs do Airflow
+COPY --chown=airflow dags/breweries_dag.py /usr/local/airflow/dags/
+
+# Criar path das camadas
+RUN mkdir -p /usr/local/airflow/camada_bronze /usr/local/airflow/camada_prata /usr/local/airflow/camada_ouro
+
+# Instalar as bibliotecas
+RUN pip install requests pandas pyarrow
+
+# Definir a variavel de path para o Airflow
+ENV AIRFLOW__CORE__DAGS_FOLDER=/usr/local/airflow/dags
+
+# Definir a variavel de ambiente para o Airflow
+ENV AIRFLOW__CORE__EXECUTOR=SequentialExecutor
+
+# Inicializar o banco de dados do Airflow
+RUN airflow db init
+
+# Criar o usuario admin
+RUN airflow users create \
+    --username admin \
+    --firstname Admin \
+    --lastname Admin \
+    --role Admin \
+    --email admin@example.com \
+    --password admin
+
+# Comando para iniciar o Airflow
+CMD ["bash", "-c", "airflow scheduler & airflow webserver --port 8080"]
