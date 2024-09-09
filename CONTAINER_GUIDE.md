@@ -13,5 +13,5 @@
 
 - Use `podman run -d -p 8080:8080 --name airflowcontainer localhost/dockerfile:latest` para iniciar o container 
 
-- Aguarde cerca de um minuto e acesse `http://localhost:8080` e use as credenciais admin para usuario e senha
+- Aguarde cerca de um minuto, acesse `http://localhost:8080` e use as credenciais admin para usuario e senha
 
