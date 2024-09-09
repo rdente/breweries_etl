@@ -44,6 +44,7 @@ A DAG do Airflow orquestra uma pipeline de dados que busca, transforma e carrega
 ### Configuração do Banco de Dados
 
 A DAG cria um banco de dados SQLite (`/home/user/breweries.db`) e uma tabela `breweries_table` para armazenar os dados das cervejarias.
+No caso, estou utilizando o path para a execução em container (`database = '/usr/local/airflow/breweries.db'`)
 #
 
 ## **Container - Docker**
