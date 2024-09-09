@@ -45,6 +45,13 @@ A DAG do Airflow orquestra uma pipeline de dados que busca, transforma e carrega
 
 A DAG cria um banco de dados SQLite (`/home/user/breweries.db`) e uma tabela `breweries_table` para armazenar os dados das cervejarias.
 #
+
+## **Container - Docker**
+
+Para utilizar executar em uma instancia de um container, leia o [CONTAINER_GUIDE.md ](https://github.com/rdente/breweries_etl/blob/main/CONTAINER_GUIDE.md)
+#
+
+
 ## Testes unitários (`test_breweries.py`)
 
 ### Descrição
@@ -72,3 +79,11 @@ Para executar os testes unitários, use este comando no terminal:
 
 ```bash
 python3 -m unittest /home/user/airflow/dags/test_breweries.py
+```
+
+## Monitoramento
+Configurar alertas por e-mail para falhas de tarefas no arquivo de configuração do Airflow pode ser uma ferramenta aliado ao uso de uma ferramenta em cloud, por exemplo envio de notificações por chat (Teams ou Slack por exemplo) sobre o status das *runs* das pipelines
+
+## Uso de cloud 
+ - Usar serviços em nuvem como *AWS S3* ou *Azure Blob* para armazenar os dados. Houve uma tentativa de implementar via Amazon RDS em PostgreSQL, mas a dificuldades de implementação direcionaram para uma ferramenta mais simplificada.
+ - Um orquestrador friendly-user na nuvem como o *Data Factory* com seus recursos do ambiente Azure ou o *AWS Glue* da Amazon fica como uma sugestão.
