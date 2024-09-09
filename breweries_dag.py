@@ -24,7 +24,8 @@ argumentos_padrao = {
 }
 
 # Criar banco de dados SQLite
-database = '/home/dente/breweries.db'
+#database = '/home/user/breweries.db' no caso, estou utilizando o path para o conteiner
+database = '/usr/local/airflow/breweries.db'
 conn = sqlite3.connect(database)
 
 # Criar a tabela breweries_table
