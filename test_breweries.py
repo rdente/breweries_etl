@@ -2,7 +2,7 @@ import unittest
 import sqlite3
 import pandas as pd
 from unittest.mock import patch
-from breweries_dag import buscar_dados_cervejaria, transformar_dados, carregar_dados_para_camada_ouro  # Substitua 'your_module' pelo nome do seu módulo
+from breweries_dag import buscar_dados_cervejaria, transformar_dados, carregar_dados_para_camada_ouro 
 
 
 class TestBreweryDataPipeline(unittest.TestCase):
